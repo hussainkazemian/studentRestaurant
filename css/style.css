@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  background-color: #F0F0F0; /* Very Light Gray */
+  font-family:'MyCustomFont'; /* Name of the font */
+    src: url('../fonts/Roboto-Regular.ttf') format('woff2'),
+         url('../fonts/Roboto-Thin.ttf') format('woff');
+  margin: 0;
+  padding: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background-color: #000000; /* Dark mode background */
+  color: rgb(196, 188, 188);
+}
+
+:root.dark-mode {
+  --xanthous: rgb(21, 55, 26);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+#checkbox-tick {
+  padding: 10px;
+}
+
+.checkbox-label {
+  background-color: #111; /* Dark toggle background */
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  position: relative;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  margin: 10px auto; /* Center the toggle */
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff; /* White toggle ball */
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+html, body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 14px;
+}
+
+#map {
+  position: fixed; /* Keep the map fixed at the bottom */
+  bottom: 20px; /* Adjust to sit above the bottom edge */
+  left: 50%; /* Move to the horizontal center */
+  transform: translateX(-50%); /* Center the map horizontally */
+  width: 300px; /* Adjust width for better fit */
+  height: 300px; /* Adjust height for better fit */
+  border: 2px solid rgb(204, 204, 204);
+  border-radius: 5px;
+  z-index: 1; /* Ensure the map is on top of the background */
+}
+
+.title {
+  font-size: 2rem;
+  color: #2C3E50; /* Dark Slate Gray */
+}
+
+#signs {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced gap between buttons */
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px; /* Adjust padding for buttons */
+  font-size: 16px;
+  background-color: #D0E9F2; /* Light Blue */
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: #2C3E50; /* Dark Slate Gray */
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #eeead8; /* Coral on hover */
+}
+
+#napit {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced gap between buttons */
+  margin: 10px 0; /* Adjust margin for less space */
+}
+
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse;
+  margin: 10px auto; /* Center the table with less margin */
+}
+
+th {
+  background-color: #D0E9F2; /* Light Blue for header */
+  font-weight: normal;
+  padding: 0.3em; /* Reduced padding */
+  text-align: left;
+}
+
+td {
+  padding: 0.2em; /* Reduced padding for less gap */
+  border-bottom: 1px solid #ccc;
+}
+
+dialog {
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #faffff;/* Soft Green */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 400px; /* Set a max width for forms */
+  margin: auto; /* Center the form */
+}
+
+label {
+  margin-bottom: 5px; /* Reduced margin */
+}
+
+input {
+  margin-bottom: 10px; /* Reduced margin */
+  padding: 8px; /* Adjusted padding */
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+#signUpButton, #closeSignUp,
+#submitLogIn, #closeSignIn {
+  width: 100%; /* Full width buttons */
+  height: 40px; /* Adjusted height */
+  margin: 8px 0; /* Reduced margin */
+}
+
+.breakpoint {
+  margin: 20px auto;
+}
+
+.breakpoint::after {
+  content: "XS";
+  color: red;
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  .breakpoint::after {
+    content: "Small";
+  }
+}
+
+@media (min-width: 768px) {
+  .breakpoint::after {
+    content: "Medium";
+  }
+}
+
+@media (min-width: 992px) {
+  .breakpoint::after {
+    content: "Large";
+  }
+}
+
+@media (min-width: 1200px) {
+  .breakpoint::after {
+    content: "XL";
+  }
+}
+
+@media (min-width: 1400px) {
+  .breakpoint::after {
+    content: "XXL";
+  }
+}
